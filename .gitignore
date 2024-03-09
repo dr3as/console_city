@@ -130,4 +130,4 @@ dmypy.json
 
 settings.py
 .git
-*.save
+*save.py

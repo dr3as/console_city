@@ -1,9 +1,13 @@
 import os
+import time
 from settings import *
+
 global is_exit
 is_exit = "0";
 global new_game_menu
 new_game_menu = "0";
+global city_name
+city_name = "";
 
 def clear_console():
     os.system('clear')
@@ -28,6 +32,7 @@ def main_menu():
             print("do other next");
 
 def new_game():
+    global city_name
     clear_console();
     print("Choose difficulty");
     print("1. Easy");
@@ -43,7 +48,9 @@ def new_game():
     clear_console();
     print("Nice, you like it " + new_game_difficulty);
     print("Please choose a name for your city:");
-    user_input = input("")
+    input_city_name = input("")
+    print(input_city_name + " it is")
+    city_name = input_city_name;
 
 def load_game():
     print("Not implemented yet");
@@ -55,43 +62,3 @@ while True:
         exit();
     if new_game_menu == "1":
         new_game();
-
-
-
-
-    
-
-##first_menu = input("");
-##def clear_console():
-##    os.system('clear')
-##clear_console();
-##
-##if first_menu == "1":
-##    print("Choose difficulty");
-##    print("1. Easy");
-##    print("2. Medium");
-##    print("3. Hard");
-##    difficulty = input("");
-##    def clear_console():
-##        os.system('clear')
-##
-##   clear_console();
-##elif first_menu == "2":
-##    print("Choose what game to load");
-##    print("1. lala");
-##    print("2. lolo");
-##    print("3. lulu");
-##    difficulty = input("");
-##    def clear_console():
-##        os.system('clear')
-##
-##    clear_console();
-##else:
-##    print("Welcome to Console City");
-##    print("Choose between a new game or to load a save");
-##    print("1. New Game");
-##    print("2. Load Game");
-##    first_menu = input("");
-##    def clear_console():
-##        os.system('clear')
-##    clear_console();

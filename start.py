@@ -33,7 +33,17 @@ def new_game():
     print("1. Easy");
     print("2. Medium");
     print("3. Hard");
-    difficulty = input("");
+    input_difficulty = input("");
+    if input_difficulty == "1":
+        new_game_difficulty = "easy";
+    elif input_difficulty == "2":
+        new_game_difficulty = "easy";
+    elif input_difficulty == "3":
+        new_game_difficulty = "easy";
+    clear_console();
+    print("Nice, you like it " + new_game_difficulty);
+    print("Please choose a name for your city:");
+    user_input = input("")
 
 def load_game():
     print("Not implemented yet");

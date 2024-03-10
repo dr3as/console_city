@@ -68,7 +68,7 @@ def func_new_game():
     input_city_name = input("")
     print(input_city_name + " it is")
     city_name = input_city_name;
-    time.sleep(3)
+    ##time.sleep(3)
     start_game = "1";
     new_game_menu = "0";
 
@@ -92,30 +92,30 @@ def func_start_game():
     print(city_name + " is just founded.");
     print("The resources available is:")
     if new_game_difficulty == "easy":
-        print("Wood: " + easy_wood_start + ".");
+        print("Wood: " + str(easy_wood_start) + ".");
         var_wood = easy_wood_start;
-        print("Stone: " + easy_stone_start + ".");
+        print("Stone: " + str(easy_stone_start) + ".");
         var_stone = easy_stone_start;
-        print("People: " + easy_people_start + ".");
+        print("People: " + str(easy_people_start) + ".");
         var_people = easy_people_start;
-        print("Food: " + easy_food_start + ".");
+        print("Food: " + str(easy_food_start) + ".");
         var_food = easy_food_start;
     elif new_game_difficulty == "medium":
-        print("Wood: " + medium_wood_start + ".");
+        print("Wood: " + str(medium_wood_start) + ".");
         var_wood = medium_wood_start;
-        print("Stone: " + medium_stone_start + ".");
+        print("Stone: " + str(medium_stone_start) + ".");
         var_stone = medium_stone_start;
-        print("People: " + medium_people_start + ".");
+        print("People: " + str(medium_people_start) + ".");
         var_people = medium_people_start;
     elif new_game_difficulty == "hard":
-        print("Wood: " + hard_wood_start + ".");
+        print("Wood: " + str(hard_wood_start) + ".");
         var_wood = hard_wood_start;
-        print("Stone: " + hard_stone_start + ".");
+        print("Stone: " + str(hard_stone_start) + ".");
         var_stone = hard_stone_start;
-        print("People: " + hard_people_start + ".");
+        print("People: " + str(hard_people_start) + ".");
         var_people = hard_people_start;
     list_builded_buildings = ["0", "0", "0"]
-    time.sleep(3)
+    ##time.sleep(3)
     func_clear_console();
     new_game_menu = "0";
     start_game = "0";
@@ -136,12 +136,30 @@ def func_play_game():
     print("Lets play.");
     while True:
         print("Please choose from menu, if you need help, just write help.")
+        print("You have:");
+        print("Food: " + str(var_food));
         input_play_choose = input("");
+        if var_food <= 0:
+            print("No food, people died")
+            time.sleep(5);
+            new_game_menu = "0";
+            start_game = "0";
+            play_game = "0";
+            break;
+        
         if input_play_choose == "exit":
+            new_game_menu = "0";
+            start_game = "0";
+            play_game = "0";
             break;
         elif input_play_choose == "resources":
-            print("")
-
+            print("You have:")
+            print(str(var_food) + " food.")
+        elif input_play_choose == "next":
+            var_food = var_food - var_people;
+            ##print("You got:")
+            ##print(str(var_food) + " food.")
+        func_clear_console();
 
 while True:
     func_clear_console();

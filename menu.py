@@ -10,10 +10,6 @@ var_menu_day = "func_menu_day";
 var_menu_day_help = "This shows the number of days you have played this city.";
 var_menu_day_key = "day";
 
-var_menu_day = "func_menu_day";
-var_menu_day_help = "This shows the number of days you have played this city.";
-var_menu_day_key = "day";
-
 var_menu_next = "func_menu_next";
 var_menu_next_help = "This will forward one day, resources will be gathered, food will be eaten, buildings will be made and people have a chance to both be born and die";
 var_menu_next_key = "next";

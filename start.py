@@ -2,6 +2,7 @@ import os
 import time
 from settings import *
 from menu import *
+import random
 
 global is_exit
 is_exit = "0";
@@ -138,6 +139,7 @@ def func_play_game():
         print("Please choose from menu, if you need help, just write help.")
         print("You have:");
         print("Food: " + str(var_food));
+        print("People: " + str(var_people));
         input_play_choose = input("");
         if var_food <= 0:
             print("No food, people died")
@@ -157,8 +159,21 @@ def func_play_game():
             print(str(var_food) + " food.")
         elif input_play_choose == "next":
             var_food = var_food - var_people;
-            ##print("You got:")
-            ##print(str(var_food) + " food.")
+            var_is_born = random.randint(0,19);
+            if var_is_born == 14:
+                var_people = var_people + 1;
+            func_clear_console();
+            print("Everyone sleeps..");
+            print("Z")
+            time.sleep(1);
+            func_clear_console();
+            print("Everyone sleeps..");
+            print("ZzZ")
+            time.sleep(1);
+            func_clear_console();
+            print("Everyone sleeps..");
+            print("ZzZzZ")
+            time.sleep(1);
         func_clear_console();
 
 while True:

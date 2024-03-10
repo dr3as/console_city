@@ -24,6 +24,7 @@ global list_builded_buildings
 global play_game
 play_game = "0";
 global list_buildings
+global list_building_builds
 
 def func_clear_console():
     os.system('clear')
@@ -137,13 +138,17 @@ def func_play_game():
     global new_game_menu
     global list_buildings
     global list_farm_build_lvl1
+    global list_building_builds
 
     print("Lets play.");
     while True:
-        print("Please choose from menu, if you need help, just write help.")
+        print("Please choose from menu, if you need help, just write help.");
         print("You have:");
         print("Food: " + str(var_food));
         print("People: " + str(var_people));
+        if list_building_builds[0] == 1:
+            if list_building_builds[1] == 1:
+                print("You are building a Farm level " + str(list_building_builds[2]) + " and there are " + str(list_building_builds[3]) + " days left");
         input_play_choose = input("");
         if var_food <= 0:
             print("No food, people died")
@@ -169,7 +174,13 @@ def func_play_game():
                 print("2. Go back.");
                 input_farm_choose = input("");
                 if input_farm_choose == "1":
-                    print("Build..");
+                    ##check if something else is being built
+                    if list_building_builds[0] == 0:
+                        list_building_builds[0] = 1;
+                        list_building_builds[1] = 1;
+                        list_building_builds[2] = 1;
+                        list_building_builds[3] = list_farm_build_lvl1[2];
+                        print("Build..");
                 elif input_farm_choose == "2":
                     print("ok");
         elif input_play_choose == "resources":

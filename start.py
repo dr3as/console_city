@@ -19,6 +19,9 @@ global var_wood
 global var_stone
 global var_people
 global var_food
+global list_builded_buildings
+global play_game
+play_game = "0";
 
 def func_clear_console():
     os.system('clear')
@@ -80,6 +83,10 @@ def func_start_game():
     global var_wood
     global var_stone
     global var_food
+    global list_builded_buildings
+    global play_game
+    global start_game
+    global new_game_menu
 
     func_clear_console();
     print(city_name + " is just founded.");
@@ -107,8 +114,33 @@ def func_start_game():
         var_stone = hard_stone_start;
         print("People: " + hard_people_start + ".");
         var_people = hard_people_start;
+    list_builded_buildings = ["0", "0", "0"]
     time.sleep(3)
     func_clear_console();
+    new_game_menu = "0";
+    start_game = "0";
+    play_game = "1";
+
+def func_play_game():
+    global city_name
+    global new_game_difficulty
+    global var_day
+    global var_people
+    global var_wood
+    global var_stone
+    global var_food
+    global list_builded_buildings
+    global play_game
+    global start_game
+    global new_game_menu
+    print("Lets play.");
+    while True:
+        print("Please choose from menu, if you need help, just write help.")
+        input_play_choose = input("");
+        if input_play_choose == "exit":
+            break;
+        elif input_play_choose == "resources":
+            print("")
 
 
 while True:
@@ -119,6 +151,8 @@ while True:
         func_new_game();
     elif start_game == "1":
         func_start_game();
+    elif play_game == "1":
+        func_play_game();
     else:
         func_main_menu();
     

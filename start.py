@@ -1,6 +1,7 @@
 import os
 import time
 from settings import *
+from menu import *
 
 global is_exit
 is_exit = "0";
@@ -73,6 +74,11 @@ def func_load_game():
 def func_start_game():
     global city_name
     global new_game_difficulty
+    global var_day
+    global var_people
+    global var_wood
+    global var_stone
+
     func_clear_console();
     print(city_name + " is just founded.");
     print("The resources available is:")

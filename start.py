@@ -163,10 +163,10 @@ def func_play_game():
             if list_buildings[0] == 0:
                 print("You do not yet have a farm.");
                 print("A farm level 1 cost " + str(list_farm_build_lvl1[0]) + " wood and " + str(list_farm_build_lvl1[1]) + " stone.");
-                print("The farm have room for") + str(list_farm_build_lvl1[3]) + ("worker and it takes") + str(list_farm_build_lvl1[2]) + ("days to build.");
-                print("It will produce ") + str(list_farm_build_lvl1[3]) + (" food each day");
-                print("1. Build farm level 1.")
-                print("2. Go back.")
+                print("The farm have room for " + str(list_farm_build_lvl1[3]) + " worker and it takes " + str(list_farm_build_lvl1[2]) + " days to build.");
+                print("It will produce " + str(list_farm_build_lvl1[4]) + " food each day");
+                print("1. Build farm level 1.");
+                print("2. Go back.");
                 input_farm_choose = input("");
                 if input_farm_choose == "1":
                     print("Build..");
@@ -177,6 +177,8 @@ def func_play_game():
             print(str(var_food) + " food.")
         elif input_play_choose == "next":
             var_food = var_food - var_people;
+            var_wood = var_wood;
+            var_stone = var_stone;
             var_is_born = random.randint(0,19);
             if var_is_born == 14:
                 var_people = var_people + 1;

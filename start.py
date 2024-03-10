@@ -8,6 +8,10 @@ global new_game_menu
 new_game_menu = "0";
 global city_name
 city_name = "";
+global start_game
+start_game = "0";
+global new_game_difficulty
+new_game_difficulty = "";
 
 def clear_console():
     os.system('clear')
@@ -33,6 +37,9 @@ def main_menu():
 
 def new_game():
     global city_name
+    global start_game
+    global new_game_menu
+    global new_game_difficulty
     clear_console();
     print("Choose difficulty");
     print("1. Easy");
@@ -42,23 +49,49 @@ def new_game():
     if input_difficulty == "1":
         new_game_difficulty = "easy";
     elif input_difficulty == "2":
-        new_game_difficulty = "easy";
+        new_game_difficulty = "medium";
     elif input_difficulty == "3":
-        new_game_difficulty = "easy";
+        new_game_difficulty = "hard";
     clear_console();
     print("Nice, you like it " + new_game_difficulty);
     print("Please choose a name for your city:");
     input_city_name = input("")
     print(input_city_name + " it is")
     city_name = input_city_name;
+    time.sleep(3)
+    start_game = "1";
+    new_game_menu = "0";
 
 def load_game():
     print("Not implemented yet");
 
+def func_start_game():
+    global city_name
+    global new_game_difficulty
+    clear_console();
+    print(city_name + " is just founded");
+    print("The resources available is:")
+    if new_game_difficulty == "easy":
+        print("Wood: " + easy_wood_start);
+        print("Stone: " + easy_stone_start);
+        print("People: " + easy_people_start);
+    elif new_game_difficulty == "medium":
+        print("Wood: " + medium_wood_start);
+        print("Stone: " + medium_stone_start);
+        print("People: " + medium_people_start);
+    elif new_game_difficulty == "hard":
+        print("Wood: " + hard_wood_start);
+        print("Stone: " + hard_stone_start);
+        print("People: " + hard_people_start);
+
 while True:
     clear_console();
-    main_menu();
     if is_exit == "1":
         exit();
-    if new_game_menu == "1":
+    elif new_game_menu == "1":
         new_game();
+    elif start_game == "1":
+        func_start_game();
+    else:
+        main_menu();
+    

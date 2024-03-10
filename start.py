@@ -18,6 +18,7 @@ var_day = "0";
 global var_wood
 global var_stone
 global var_people
+global var_food
 
 def func_clear_console():
     os.system('clear')
@@ -78,6 +79,7 @@ def func_start_game():
     global var_people
     global var_wood
     global var_stone
+    global var_food
 
     func_clear_console();
     print(city_name + " is just founded.");
@@ -89,6 +91,8 @@ def func_start_game():
         var_stone = easy_stone_start;
         print("People: " + easy_people_start + ".");
         var_people = easy_people_start;
+        print("Food: " + easy_food_start + ".");
+        var_food = easy_food_start;
     elif new_game_difficulty == "medium":
         print("Wood: " + medium_wood_start + ".");
         var_wood = medium_wood_start;

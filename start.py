@@ -4,6 +4,7 @@ from settings import *
 from menu import *
 import random
 
+##sette globals?
 global is_exit
 is_exit = "0";
 global new_game_menu
@@ -26,28 +27,36 @@ play_game = "0";
 global list_buildings
 global list_building_builds
 
+##function for å tømme skjerm
 def func_clear_console():
     os.system('clear')
 
+##function for meny
 def func_main_menu():
     while True:
         global is_exit;
         global new_game_menu;
+        ##print meny
         print("Welcome to Console City");
         print("Choose between a new game or to load a save");
         print("1. New Game");
         print("2. Load Game");
         print("3. Exit");
+        ##ta imot input
         user_input = input("")
+        ##exit
         if user_input == "3":
             is_exit = "1";
             break
+        ##lag nytt spill og sett variable for det
         elif user_input == "1":
             new_game_menu = "1";
             break
+        ##load gammelt save
         elif user_input == "2":
             print("do other next");
 
+##function for å lage nytt spill
 def func_new_game():
     global city_name
     global start_game
@@ -58,6 +67,7 @@ def func_new_game():
     print("1. Easy");
     print("2. Medium");
     print("3. Hard");
+    ##Velge nivå
     input_difficulty = input("");
     if input_difficulty == "1":
         new_game_difficulty = "easy";
@@ -72,12 +82,15 @@ def func_new_game():
     print(input_city_name + " it is")
     city_name = input_city_name;
     ##time.sleep(3)
+    ## sette variabel for å sette spill og fjerne den for å lage nytt 
     start_game = "1";
     new_game_menu = "0";
 
+#function for å loade spill
 def func_load_game():
     print("Not implemented yet");
 
+##function for å starte spill/spille
 def func_start_game():
     global city_name
     global new_game_difficulty
@@ -94,6 +107,7 @@ def func_start_game():
     func_clear_console();
     print(city_name + " is just founded.");
     print("The resources available is:")
+    ##sett variabler basert på vasnkelighetsgrad
     if new_game_difficulty == "easy":
         print("Wood: " + str(easy_wood_start) + ".");
         var_wood = easy_wood_start;
@@ -123,6 +137,8 @@ def func_start_game():
     new_game_menu = "0";
     start_game = "0";
     play_game = "1";
+
+#function for selve spillingen
 
 def func_play_game():
     global city_name
@@ -194,11 +210,16 @@ def func_play_game():
                         list_building_builds[1] = 1;
                         list_building_builds[2] = 1;
                         list_building_builds[3] = list_farm_build_lvl1[2];
-                        print("Build..");
+                        print("Starting to build");
+                        time.sleep(1);
+                        func_clear_console();
                     elif list_building_builds[0] == 1:
                         print("Something else is being built");
+                        time.sleep(1);
+                        func_clear_console();
                 elif input_farm_choose == "2":
                     print("ok");
+                    func_clear_console();
         elif input_play_choose == "resources":
             print("You have:")
             print(str(var_food) + " food.")

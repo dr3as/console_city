@@ -144,9 +144,23 @@ def func_play_game():
     while True:
         print("Please choose from menu, if you need help, just write help.");
         print("You have:");
-        print("Food: " + str(var_food));
         print("People: " + str(var_people));
+        print("Food: " + str(var_food));
+        print("Wood " + str(var_wood));
+        print("Stone: " + str(var_stone));
+        print("Buildings:");
+        print("Farm");
+        print("Woodcutter");
+        print("Stonecutter");
+        print("House");
         if list_building_builds[0] == 1:
+            if list_building_builds[3] == 0:
+                    if list_building_builds[3] == 0:
+                        list_buildings[0] = list_buildings[0] + 1;
+                        list_building_builds[0] = 0;
+                        list_building_builds[1] = 0;
+                        list_building_builds[2] = 0;
+                        list_building_builds[3] = 0;
             if list_building_builds[1] == 1:
                 print("You are building a Farm level " + str(list_building_builds[2]) + " and there are " + str(list_building_builds[3]) + " days left");
         input_play_choose = input("");
@@ -181,12 +195,21 @@ def func_play_game():
                         list_building_builds[2] = 1;
                         list_building_builds[3] = list_farm_build_lvl1[2];
                         print("Build..");
+                    elif list_building_builds[0] == 1:
+                        print("Something else is being built");
                 elif input_farm_choose == "2":
                     print("ok");
         elif input_play_choose == "resources":
             print("You have:")
             print(str(var_food) + " food.")
         elif input_play_choose == "next":
+            if list_building_builds[0] == 1:
+                if list_building_builds[3] > 0:
+                    list_building_builds[3] = list_building_builds[3] - 1;
+            var_new_food = 0;
+            if list_buildings[0] == 1:
+                var_new_food = var_new_food + list_farm_build_lvl1[4];
+            var_food = var_food + var_new_food;
             var_food = var_food - var_people;
             var_wood = var_wood;
             var_stone = var_stone;

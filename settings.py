@@ -20,9 +20,9 @@ hard_food_start = 50;
 list_building_builds = [0, 0, 0, 0];
 
 #wood, stone, days, people, produce
-list_farm_build_lvl1 = [30, 20, 2, 1, 2];
-list_farm_build_lvl2 = [50, 40, 3, 2, 4];
-list_farm_build_lvl3 = [70, 60, 5, 3, 9];
+list_farm_build_lvl1 = [30, 20, 2, 1, 10];
+list_farm_build_lvl2 = [50, 40, 3, 2, 20];
+list_farm_build_lvl3 = [70, 60, 5, 3, 35];
 
 #farm, woodcutter, stonegatherer, house
 list_buildings = [0, 0, 0, 0];

@@ -1,5 +1,5 @@
 var_menu_help = "func_help";
-var_menu_help_help = "Available commands are: Wood, Help, Exit. You can also use help on each, like \"wood help\"";
+var_menu_help_help = "Available commands are: farm, wood, help, exit. You can also use help on each, like \"wood help\"";
 var_menu_help_key = "help";
 
 var_menu_wood = "func_menu_wood";

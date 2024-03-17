@@ -256,7 +256,7 @@ def func_play_game():
             if list_buildings[1] == 0:
                 print("You do not yet have a woodcutter.");
                 print("A woodcutter level 1 cost " + str(list_woodcutter_build_lvl1[0]) + " wood and " + str(list_woodcutter_build_lvl1[1]) + " stone.");
-                print("The farm have room for " + str(list_woodcutter_build_lvl1[3]) + " worker and it takes " + str(list_woodcutter_build_lvl1[2]) + " days to build.");
+                print("The woodcutter have room for " + str(list_woodcutter_build_lvl1[3]) + " worker and it takes " + str(list_woodcutter_build_lvl1[2]) + " days to build.");
                 print("It will produce " + str(list_woodcutter_build_lvl1[4]) + " wood each day");
                 print("1. Build woodcutter level 1.");
                 print("2. Go back.");
@@ -357,6 +357,9 @@ def func_play_game():
             var_new_food = 0;
             if list_buildings[0] == 1:
                 var_new_food = var_new_food + list_farm_build_lvl1[4];
+            var_new_wood = 0;
+            if list_buildings[1] == 1:
+                var_new_wood = var_new_wood + list_woodcutter_build_lvl1[4];
             var_food = var_food + var_new_food;
             var_all_people = var_people + var_workers;
             var_food = var_food - var_all_people;

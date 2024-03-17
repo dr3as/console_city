@@ -148,6 +148,7 @@ def func_play_game():
     global new_game_difficulty
     global var_day
     global var_people
+    global var_workers
     global var_wood
     global var_stone
     global var_food

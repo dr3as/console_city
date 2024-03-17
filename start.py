@@ -26,6 +26,8 @@ global play_game
 play_game = "0";
 global list_buildings
 global list_building_builds
+global var_workers
+var_workers = 0;
 
 ##function for å tømme skjerm
 def func_clear_console():
@@ -96,6 +98,7 @@ def func_start_game():
     global new_game_difficulty
     global var_day
     global var_people
+    global var_workers
     global var_wood
     global var_stone
     global var_food
@@ -208,13 +211,17 @@ def func_play_game():
                     if list_building_builds[0] == 0:
                             if var_wood >= list_farm_build_lvl1[0]:
                                 var_wood = var_wood - list_farm_build_lvl1[0];
-                                list_building_builds[0] = 1;
-                                list_building_builds[1] = 1;
-                                list_building_builds[2] = 1;
-                                list_building_builds[3] = list_farm_build_lvl1[2];
-                                print("Starting to build");
-                                time.sleep(1);
-                                func_clear_console();
+                                if var_stone >= list_farm_build_lvl1[1]:
+                                        var_stone = var_stone - list_farm_build_lvl1[1];
+                                        if var_workers >= list_farm_build_lvl1[3]:
+                                                vvar_workers = var_workers - list_farm_build_lvl1[3];
+                                                list_building_builds[0] = 1;
+                                                list_building_builds[1] = 1;
+                                                list_building_builds[2] = 1;
+                                                list_building_builds[3] = list_farm_build_lvl1[2];
+                                                print("Starting to build");
+                                                time.sleep(1);
+                                                func_clear_console();
                     elif list_building_builds[0] == 1:
                         print("Something else is being built");
                         time.sleep(1);

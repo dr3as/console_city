@@ -164,11 +164,14 @@ def func_play_game():
         print("Please choose from menu, if you need help, just write help.");
         print("You have:");
         print("People: " + str(var_people));
-        print("Workers: 1");
+        print("Workers: " + str(var_workers));
         print("Food: " + str(var_food));
         print("Wood " + str(var_wood));
         print("Stone: " + str(var_stone));
-        print("Farm: Yes, Level 1, makes bla bla and have 1 worker");
+        if list_buildings[0] == 0:
+            print("Farm: No");
+        elif list_buildings[0] >= 1:
+            print("Farm: Level " + str(list_buildings[0]));
         print("Woodcutter: No");
         print("Stonecutter: Yes, Level 2, makes blabla new stone per day and have 2 worker");
         print("House: No, Chance of new pople is 5%");
@@ -214,7 +217,8 @@ def func_play_game():
                                 if var_stone >= list_farm_build_lvl1[1]:
                                         var_stone = var_stone - list_farm_build_lvl1[1];
                                         if var_workers >= list_farm_build_lvl1[3]:
-                                                vvar_workers = var_workers - list_farm_build_lvl1[3];
+                                                var_workers = var_workers + list_farm_build_lvl1[3];
+                                                var_people = var_people - list_farm_build_lvl1[3];
                                                 list_building_builds[0] = 1;
                                                 list_building_builds[1] = 1;
                                                 list_building_builds[2] = 1;

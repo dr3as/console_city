@@ -243,7 +243,8 @@ def func_play_game():
             if list_buildings[0] == 1:
                 var_new_food = var_new_food + list_farm_build_lvl1[4];
             var_food = var_food + var_new_food;
-            var_food = var_food - var_people;
+            var_all_people = var_people + var_workers;
+            var_food = var_food - var_all_people;
             var_wood = var_wood;
             var_stone = var_stone;
             var_is_born = random.randint(0,19);

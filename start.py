@@ -173,9 +173,18 @@ def func_play_game():
             print("Farm: No");
         elif list_buildings[0] >= 1:
             print("Farm: Level " + str(list_buildings[0]));
-        print("Woodcutter: No");
-        print("Stonecutter: Yes, Level 2, makes blabla new stone per day and have 2 worker");
-        print("House: No, Chance of new pople is 5%");
+        if list_buildings[1] == 0:
+            print("Woodcutter: No");
+        elif list_buildings[1] >= 1:
+            print("Woodcutter: Level " + str(list_buildings[1]));
+        if list_buildings[2] == 0:
+            print("Stonecutter: No");
+        elif list_buildings[2] >= 1:
+            print("Stonecutter: Level " + str(list_buildings[2]));
+        if list_buildings[3] == 0:
+            print("House: No");
+        elif list_buildings[3] >= 1:
+            print("House: Level " + str(list_buildings[3]));
         if list_building_builds[0] == 1:
             if list_building_builds[3] == 0:
                     if list_building_builds[3] == 0:

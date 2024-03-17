@@ -253,7 +253,7 @@ def func_play_game():
                     func_clear_console();
         elif input_play_choose == "woodcutter":
             print("Woodcutter:");
-            if list_buildings[0] == 0:
+            if list_buildings[1] == 0:
                 print("You do not yet have a woodcutter.");
                 print("A woodcutter level 1 cost " + str(list_woodcutter_build_lvl1[0]) + " wood and " + str(list_woodcutter_build_lvl1[1]) + " stone.");
                 print("The farm have room for " + str(list_woodcutter_build_lvl1[3]) + " worker and it takes " + str(list_woodcutter_build_lvl1[2]) + " days to build.");
@@ -285,7 +285,7 @@ def func_play_game():
                     func_clear_console();
         elif input_play_choose == "stonecutter":
             print("Farm:");
-            if list_buildings[0] == 0:
+            if list_buildings[2] == 0:
                 print("You do not yet have a farm.");
                 print("A farm level 1 cost " + str(list_farm_build_lvl1[0]) + " wood and " + str(list_farm_build_lvl1[1]) + " stone.");
                 print("The farm have room for " + str(list_farm_build_lvl1[3]) + " worker and it takes " + str(list_farm_build_lvl1[2]) + " days to build.");
@@ -317,7 +317,7 @@ def func_play_game():
                     func_clear_console();
         elif input_play_choose == "farm":
             print("Farm:");
-            if list_buildings[0] == 0:
+            if list_buildings[3] == 0:
                 print("You do not yet have a farm.");
                 print("A farm level 1 cost " + str(list_farm_build_lvl1[0]) + " wood and " + str(list_farm_build_lvl1[1]) + " stone.");
                 print("The farm have room for " + str(list_farm_build_lvl1[3]) + " worker and it takes " + str(list_farm_build_lvl1[2]) + " days to build.");

@@ -28,6 +28,11 @@ global list_buildings
 global list_building_builds
 global var_workers
 var_workers = 0;
+global list_farm_build_lvl2
+global list_farm_build_lvl3
+global list_woodcutter_build_lvl1
+global list_woodcutter_build_lvl2
+global list_woodcutter_build_lvl3
 
 ##function for å tømme skjerm
 def func_clear_console():
@@ -158,6 +163,11 @@ def func_play_game():
     global new_game_menu
     global list_buildings
     global list_farm_build_lvl1
+    global list_farm_build_lvl2
+    global list_farm_build_lvl3
+    global list_woodcutter_build_lvl1
+    global list_woodcutter_build_lvl2
+    global list_woodcutter_build_lvl3
     global list_building_builds
 
     print("Lets play.");
@@ -209,6 +219,102 @@ def func_play_game():
             start_game = "0";
             play_game = "0";
             break;
+        elif input_play_choose == "farm":
+            print("Farm:");
+            if list_buildings[0] == 0:
+                print("You do not yet have a farm.");
+                print("A farm level 1 cost " + str(list_farm_build_lvl1[0]) + " wood and " + str(list_farm_build_lvl1[1]) + " stone.");
+                print("The farm have room for " + str(list_farm_build_lvl1[3]) + " worker and it takes " + str(list_farm_build_lvl1[2]) + " days to build.");
+                print("It will produce " + str(list_farm_build_lvl1[4]) + " food each day");
+                print("1. Build farm level 1.");
+                print("2. Go back.");
+                input_farm_choose = input("");
+                if input_farm_choose == "1":
+                    ##check if something else is being built
+                    if list_building_builds[0] == 0:
+                            if var_wood >= list_farm_build_lvl1[0] and var_stone >= list_farm_build_lvl1[1] and var_people >= list_farm_build_lvl1[3]:
+                                var_wood = var_wood - list_farm_build_lvl1[0];
+                                var_stone = var_stone - list_farm_build_lvl1[1];
+                                var_workers = var_workers + list_farm_build_lvl1[3];
+                                var_people = var_people - list_farm_build_lvl1[3];
+                                list_building_builds[0] = 1;
+                                list_building_builds[1] = 1;
+                                list_building_builds[2] = 1;
+                                list_building_builds[3] = list_farm_build_lvl1[2];
+                                print("Starting to build");
+                                time.sleep(1);
+                                func_clear_console();
+                    elif list_building_builds[0] == 1:
+                        print("Something else is being built");
+                        time.sleep(1);
+                        func_clear_console();
+                elif input_farm_choose == "2":
+                    print("ok");
+                    func_clear_console();
+        elif input_play_choose == "woodcutter":
+            print("Woodcutter:");
+            if list_buildings[0] == 0:
+                print("You do not yet have a woodcutter.");
+                print("A woodcutter level 1 cost " + str(list_woodcutter_build_lvl1[0]) + " wood and " + str(list_woodcutter_build_lvl1[1]) + " stone.");
+                print("The farm have room for " + str(list_woodcutter_build_lvl1[3]) + " worker and it takes " + str(list_woodcutter_build_lvl1[2]) + " days to build.");
+                print("It will produce " + str(list_woodcutter_build_lvl1[4]) + " wood each day");
+                print("1. Build woodcutter level 1.");
+                print("2. Go back.");
+                input_woodcutter_choose = input("");
+                if input_woodcutter_choose == "1":
+                    ##check if something else is being built
+                    if list_building_builds[0] == 0:
+                            if var_wood >= list_woodcutter_build_lvl1[0] and var_stone >= list_woodcutter_build_lvl1[1] and var_people >= list_woodcutter_build_lvl1[3]:
+                                var_wood = var_wood - list_woodcutter_build_lvl1[0];
+                                var_stone = var_stone - list_woodcutter_build_lvl1[1];
+                                var_workers = var_workers + list_woodcutter_build_lvl1[3];
+                                var_people = var_people - list_woodcutter_build_lvl1[3];
+                                list_building_builds[0] = 1;
+                                list_building_builds[1] = 1;
+                                list_building_builds[2] = 1;
+                                list_building_builds[3] = list_woodcutter_build_lvl1[2];
+                                print("Starting to build");
+                                time.sleep(1);
+                                func_clear_console();
+                    elif list_building_builds[0] == 1:
+                        print("Something else is being built");
+                        time.sleep(1);
+                        func_clear_console();
+                elif input_woodcutter_choose == "2":
+                    print("ok");
+                    func_clear_console();
+        elif input_play_choose == "stonecutter":
+            print("Farm:");
+            if list_buildings[0] == 0:
+                print("You do not yet have a farm.");
+                print("A farm level 1 cost " + str(list_farm_build_lvl1[0]) + " wood and " + str(list_farm_build_lvl1[1]) + " stone.");
+                print("The farm have room for " + str(list_farm_build_lvl1[3]) + " worker and it takes " + str(list_farm_build_lvl1[2]) + " days to build.");
+                print("It will produce " + str(list_farm_build_lvl1[4]) + " food each day");
+                print("1. Build farm level 1.");
+                print("2. Go back.");
+                input_farm_choose = input("");
+                if input_farm_choose == "1":
+                    ##check if something else is being built
+                    if list_building_builds[0] == 0:
+                            if var_wood >= list_farm_build_lvl1[0] and var_stone >= list_farm_build_lvl1[1] and var_people >= list_farm_build_lvl1[3]:
+                                var_wood = var_wood - list_farm_build_lvl1[0];
+                                var_stone = var_stone - list_farm_build_lvl1[1];
+                                var_workers = var_workers + list_farm_build_lvl1[3];
+                                var_people = var_people - list_farm_build_lvl1[3];
+                                list_building_builds[0] = 1;
+                                list_building_builds[1] = 1;
+                                list_building_builds[2] = 1;
+                                list_building_builds[3] = list_farm_build_lvl1[2];
+                                print("Starting to build");
+                                time.sleep(1);
+                                func_clear_console();
+                    elif list_building_builds[0] == 1:
+                        print("Something else is being built");
+                        time.sleep(1);
+                        func_clear_console();
+                elif input_farm_choose == "2":
+                    print("ok");
+                    func_clear_console();
         elif input_play_choose == "farm":
             print("Farm:");
             if list_buildings[0] == 0:

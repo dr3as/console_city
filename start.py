@@ -196,15 +196,26 @@ def func_play_game():
         elif list_buildings[3] >= 1:
             print("House: Level " + str(list_buildings[3]));
         if list_building_builds[0] == 1:
-            if list_building_builds[3] == 0:
-                    if list_building_builds[3] == 0:
-                        list_buildings[0] = list_buildings[0] + 1;
-                        list_building_builds[0] = 0;
-                        list_building_builds[1] = 0;
-                        list_building_builds[2] = 0;
-                        list_building_builds[3] = 0;
             if list_building_builds[1] == 1:
-                print("You are building a Farm level " + str(list_building_builds[2]) + " and there are " + str(list_building_builds[3]) + " days left");
+                if list_building_builds[3] == 0:
+                        if list_building_builds[3] == 0:
+                            list_buildings[0] = list_buildings[0] + 1;
+                            list_building_builds[0] = 0;
+                            list_building_builds[1] = 0;
+                            list_building_builds[2] = 0;
+                            list_building_builds[3] = 0;
+                if list_building_builds[1] == 1:
+                    print("You are building a Farm level " + str(list_building_builds[2]) + " and there are " + str(list_building_builds[3]) + " days left");
+            if list_building_builds[1] == 2:
+                if list_building_builds[3] == 0:
+                        if list_building_builds[3] == 0:
+                            list_buildings[1] = list_buildings[1] + 1;
+                            list_building_builds[0] = 0;
+                            list_building_builds[1] = 0;
+                            list_building_builds[2] = 0;
+                            list_building_builds[3] = 0;
+                if list_building_builds[1] == 1:
+                    print("You are building a Woodcutter level " + str(list_building_builds[2]) + " and there are " + str(list_building_builds[3]) + " days left");
         input_play_choose = input("");
         if var_food <= 0:
             print("No food, people died")

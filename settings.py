@@ -16,7 +16,7 @@ hard_food_start = 50;
 ##1 farm lvl 1, 2 farm lvl 2, 3 farmlvl 3
 #list_builded_buildings = ["0", "0", "0"]
 
-##1, is something built, 2 type, 3 level, 4 days
+##1, is something built, 2 type, 3 level, 4 days left
 list_building_builds = [0, 0, 0, 0];
 
 #wood, stone, days, people, produce

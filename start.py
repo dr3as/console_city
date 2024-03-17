@@ -206,13 +206,15 @@ def func_play_game():
                 if input_farm_choose == "1":
                     ##check if something else is being built
                     if list_building_builds[0] == 0:
-                        list_building_builds[0] = 1;
-                        list_building_builds[1] = 1;
-                        list_building_builds[2] = 1;
-                        list_building_builds[3] = list_farm_build_lvl1[2];
-                        print("Starting to build");
-                        time.sleep(1);
-                        func_clear_console();
+                            if var_wood >= list_farm_build_lvl1[0]:
+                                var_wood = var_wood - list_farm_build_lvl1[0];
+                                list_building_builds[0] = 1;
+                                list_building_builds[1] = 1;
+                                list_building_builds[2] = 1;
+                                list_building_builds[3] = list_farm_build_lvl1[2];
+                                print("Starting to build");
+                                time.sleep(1);
+                                func_clear_console();
                     elif list_building_builds[0] == 1:
                         print("Something else is being built");
                         time.sleep(1);
